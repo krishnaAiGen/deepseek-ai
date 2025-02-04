@@ -68,7 +68,7 @@ TEMPLATES = {
 }
 
 # Initialize the model
-model = OllamaLLM(model="mistral", temperature=1)
+model = OllamaLLM(model="phi4", temperature=1)
 
 # Create a lock for thread safety
 request_lock = Lock()
@@ -101,6 +101,7 @@ def basic_chat():
 def task_chat():
     with request_lock:
         try:
+            print("Processing basic chat1 request")
             data = request.get_json()
             input_text = data.get('text')
             task_type = data.get('task')  # Specify the task type
