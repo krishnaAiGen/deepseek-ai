@@ -68,13 +68,37 @@ TEMPLATES = {
 }
 
 # Initialize the model
-model = OllamaLLM(model="mistral", temperature = 1)
+model = OllamaLLM(model="mistral", temperature=1)
 
 # Create a lock for thread safety
 request_lock = Lock()
 
+# Basic Chat Endpoint
 @app.route('/chat', methods=['POST'])
-def chat():
+def basic_chat():
+    with request_lock:  # Ensure sequential processing
+        try:
+            print("Processing basic chat request")
+            data = request.get_json()
+            input_text = data.get('text')
+
+            if not input_text:
+                return jsonify({"error": "No text provided"}), 400
+
+            # Get response from the model
+            output = model.invoke(input_text)
+
+            return jsonify({
+                "response": output
+            })
+
+        except Exception as e:
+            print(f"Request processing error: {e}")
+            return jsonify({"error": str(e)}), 500
+
+# Task-Specific Chat Endpoint
+@app.route('/chat1', methods=['POST'])
+def task_chat():
     with request_lock:
         try:
             data = request.get_json()
@@ -103,6 +127,7 @@ def chat():
             })
 
         except Exception as e:
+            print(f"Request processing error: {e}")
             return jsonify({"error": str(e)}), 500
 
 if __name__ == '__main__':
