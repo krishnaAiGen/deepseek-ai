@@ -206,7 +206,7 @@ if __name__ == "__main__":
         uvicorn.run(
             app, 
             host="0.0.0.0", 
-            port=9000,
+            port=9003,
             log_level="info",
             timeout_graceful_shutdown=5  # Shutdown timeout in seconds
         )
