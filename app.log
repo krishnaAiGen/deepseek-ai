@@ -1,0 +1,88 @@
+2025-04-12 00:33:23,458 - INFO - Starting server...
+2025-04-12 00:33:25,845 - INFO - Received request with text: Hello, what is Polkadot?
+2025-04-12 00:33:25,845 - INFO - Attempting to get response from Deepseek
+2025-04-12 00:33:25,845 - ERROR - Missing Deepseek API configuration
+2025-04-12 00:33:25,845 - INFO - Deepseek failed, falling back to OpenAI
+2025-04-12 00:33:25,845 - ERROR - Missing OpenAI API key
+2025-04-12 00:33:25,845 - ERROR - Both Deepseek and OpenAI failed to provide a response
+2025-04-12 00:33:25,845 - ERROR - Error in chat endpoint: 500: Failed to get response from both APIs
+2025-04-12 00:34:08,461 - INFO - Starting server...
+2025-04-12 00:34:10,376 - INFO - Received request with text: Hello, what is Polkadot?
+2025-04-12 00:34:10,377 - INFO - Attempting to get response from Deepseek
+2025-04-12 00:34:10,377 - ERROR - Missing Deepseek API configuration
+2025-04-12 00:34:10,377 - INFO - Deepseek failed, falling back to OpenAI
+2025-04-12 00:34:10,377 - ERROR - Missing OpenAI API key
+2025-04-12 00:34:10,377 - ERROR - Both Deepseek and OpenAI failed to provide a response
+2025-04-12 00:34:10,377 - ERROR - Error in chat endpoint: 500: Failed to get response from both APIs
+2025-04-12 00:35:37,929 - INFO - Starting server...
+2025-04-12 00:35:40,755 - INFO - Received request with text: Hello, what is Polkadot?
+2025-04-12 00:35:40,756 - INFO - Attempting to get response from Deepseek
+2025-04-12 00:36:26,412 - INFO - HTTP Request: POST https://agent-ad3e87abd9b656b99c31-ocwsq.ondigitalocean.app/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-12 00:36:26,427 - INFO - Successfully got response, saving to chat log
+2025-04-12 00:37:07,143 - INFO - HTTP Request: POST https://agent-ad3e87abd9b656b99c31-ocwsq.ondigitalocean.app/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-12 00:42:17,157 - INFO - Starting server...
+2025-04-12 00:42:44,078 - INFO - Received request with text: Hello, plan me a travel to kathmandu?
+2025-04-12 00:42:44,079 - INFO - Attempting to get response from OpenAI
+2025-04-12 00:42:44,079 - ERROR - Missing OpenAI API key
+2025-04-12 00:42:44,079 - INFO - OpenAI failed, falling back to Deepseek
+2025-04-12 00:43:44,445 - INFO - HTTP Request: POST https://agent-ad3e87abd9b656b99c31-ocwsq.ondigitalocean.app/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-12 00:44:32,418 - INFO - Starting server...
+2025-04-12 00:44:34,929 - INFO - Received request with text: Hello, plan me a travel to kathmandu?
+2025-04-12 00:44:34,930 - INFO - Attempting to get response from OpenAI
+2025-04-12 00:44:34,930 - ERROR - Missing OpenAI API key
+2025-04-12 00:44:34,930 - INFO - OpenAI failed, falling back to Deepseek
+2025-04-12 00:45:15,475 - INFO - HTTP Request: POST https://agent-ad3e87abd9b656b99c31-ocwsq.ondigitalocean.app/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-12 00:47:48,368 - INFO - Starting server...
+2025-04-12 00:47:51,526 - INFO - Received request with text: Hello, plan me a travel to kathmandu?
+2025-04-12 00:47:51,526 - INFO - Attempting to get response from OpenAI
+2025-04-12 00:47:51,526 - ERROR - Missing OpenAI API key
+2025-04-12 00:47:51,526 - INFO - OpenAI failed, falling back to Deepseek
+2025-04-12 00:48:40,021 - INFO - HTTP Request: POST https://agent-ad3e87abd9b656b99c31-ocwsq.ondigitalocean.app/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-12 00:49:15,091 - INFO - Checking environment variables...
+2025-04-12 00:49:15,091 - INFO - AGENT_ENDPOINT: Set
+2025-04-12 00:49:15,091 - INFO - AGENT_KEY: Set
+2025-04-12 00:49:15,091 - INFO - OPENAI_API_KEY: Not Set
+2025-04-12 00:49:15,104 - INFO - Starting server...
+2025-04-12 00:49:17,122 - INFO - Received request with text: Hello, plan me a travel to kathmandu?
+2025-04-12 00:49:17,122 - INFO - Attempting to get response from OpenAI
+2025-04-12 00:49:17,122 - INFO - OpenAI API key length: 0
+2025-04-12 00:49:17,122 - ERROR - Missing OpenAI API key
+2025-04-12 00:49:17,122 - INFO - OpenAI failed, falling back to Deepseek
+2025-04-12 00:50:57,872 - INFO - HTTP Request: POST https://agent-ad3e87abd9b656b99c31-ocwsq.ondigitalocean.app/api/v1/chat/completions "HTTP/1.1 524 "
+2025-04-12 00:50:57,873 - INFO - Retrying request to /chat/completions in 0.490897 seconds
+2025-04-12 00:51:47,069 - INFO - Checking environment variables...
+2025-04-12 00:51:47,069 - INFO - AGENT_ENDPOINT: Set
+2025-04-12 00:51:47,069 - INFO - AGENT_KEY: Set
+2025-04-12 00:51:47,069 - INFO - OPENAI_API_KEY: Set
+2025-04-12 00:51:47,083 - INFO - Starting server...
+2025-04-12 00:51:50,551 - INFO - HTTP Request: POST https://agent-ad3e87abd9b656b99c31-ocwsq.ondigitalocean.app/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-12 00:52:01,245 - INFO - Checking environment variables...
+2025-04-12 00:52:01,245 - INFO - AGENT_ENDPOINT: Set
+2025-04-12 00:52:01,245 - INFO - AGENT_KEY: Set
+2025-04-12 00:52:01,245 - INFO - OPENAI_API_KEY: Set
+2025-04-12 00:52:01,256 - INFO - Starting server...
+2025-04-12 00:52:06,323 - INFO - Received request with text: Hello, plan me a travel to kathmandu?
+2025-04-12 00:52:06,323 - INFO - Attempting to get response from OpenAI
+2025-04-12 00:52:06,323 - INFO - OpenAI API key length: 164
+2025-04-12 00:52:06,356 - INFO - OpenAI client created successfully
+2025-04-12 00:52:07,634 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-04-12 00:52:07,635 - INFO - Retrying request to /chat/completions in 0.449859 seconds
+2025-04-12 00:52:08,387 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-04-12 00:52:08,387 - INFO - Retrying request to /chat/completions in 0.811455 seconds
+2025-04-12 00:52:09,517 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-04-12 00:52:09,527 - ERROR - OpenAI API error: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2025-04-12 00:52:09,527 - INFO - OpenAI failed, falling back to Deepseek
+2025-04-12 00:53:02,566 - INFO - HTTP Request: POST https://agent-ad3e87abd9b656b99c31-ocwsq.ondigitalocean.app/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-12 00:54:06,328 - INFO - Checking environment variables...
+2025-04-12 00:54:06,329 - INFO - AGENT_ENDPOINT: Set
+2025-04-12 00:54:06,329 - INFO - AGENT_KEY: Set
+2025-04-12 00:54:06,329 - INFO - OPENAI_API_KEY: Set
+2025-04-12 00:54:06,341 - INFO - Starting server...
+2025-04-12 00:54:14,358 - INFO - Received request with text: Hello, plan me a travel to kathmandu?
+2025-04-12 00:54:14,359 - INFO - Attempting to get response from OpenAI
+2025-04-12 00:54:14,359 - INFO - OpenAI API key length: 51
+2025-04-12 00:54:14,404 - INFO - OpenAI client created successfully
+2025-04-12 00:54:19,521 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-12 00:54:19,535 - INFO - OpenAI response received successfully
+2025-04-12 00:54:35,695 - INFO - Server shutdown complete
+2025-04-12 00:54:35,696 - INFO - Shutdown signal received
