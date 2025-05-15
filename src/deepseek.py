@@ -3,7 +3,7 @@ from pydantic import BaseModel
 import os
 import json
 import logging
-from openai import OpenAI
+import httpx
 from fastapi.middleware.cors import CORSMiddleware
 from datetime import datetime
 from dotenv import load_dotenv
@@ -75,8 +75,8 @@ async def save_chat_log_async():
     except Exception as e:
         logging.error(f"Error saving chat log: {str(e)}")
 
-def get_openai_response(text: str) -> Optional[str]:
-    """Get response from OpenAI API"""
+async def get_openai_response(text: str) -> Optional[str]:
+    """Get response from OpenAI API asynchronously"""
     openai_api_key = os.getenv("OPENAI_API_KEY")
     logging.info(f"OpenAI API key length: {len(openai_api_key) if openai_api_key else 0}")
     
@@ -85,23 +85,38 @@ def get_openai_response(text: str) -> Optional[str]:
         return None
 
     try:
-        client = OpenAI(api_key=openai_api_key)
-        logging.info("OpenAI client created successfully")
-        
-        response = client.chat.completions.create(
-            model="gpt-3.5-turbo",
-            messages=[
+        headers = {
+            "Authorization": f"Bearer {openai_api_key}",
+            "Content-Type": "application/json"
+        }
+        payload = {
+            "model": "gpt-3.5-turbo",
+            "messages": [
                 {"role": "user", "content": text}
             ]
-        )
-        logging.info("OpenAI response received successfully")
-        return response.choices[0].message.content
+        }
+        
+        async with httpx.AsyncClient(timeout=30.0) as client:
+            logging.info("Making async request to OpenAI")
+            response = await client.post(
+                "https://api.openai.com/v1/chat/completions",
+                headers=headers,
+                json=payload
+            )
+            
+        if response.status_code == 200:
+            result = response.json()
+            logging.info("OpenAI response received successfully")
+            return result['choices'][0]['message']['content']
+        else:
+            logging.error(f"OpenAI API error: {response.text}")
+            return None
     except Exception as e:
-        logging.error(f"OpenAI API error: {str(e)}")
+        logging.error(f"OpenAI API exception: {str(e)}")
         return None
 
-def get_deepseek_response(text: str) -> Optional[str]:
-    """Get response from Deepseek API"""
+async def get_deepseek_response(text: str) -> Optional[str]:
+    """Get response from Deepseek API asynchronously"""
     agent_endpoint = os.getenv("AGENT_ENDPOINT")
     agent_key = os.getenv("AGENT_KEY")
     
@@ -110,21 +125,35 @@ def get_deepseek_response(text: str) -> Optional[str]:
         return None
 
     try:
-        client = OpenAI(
-            base_url=agent_endpoint,
-            api_key=agent_key,
-        )
-        
-        response = client.chat.completions.create(
-            model="n/a",
-            messages=[
+        headers = {
+            "Authorization": f"Bearer {agent_key}",
+            "Content-Type": "application/json"
+        }
+        payload = {
+            "model": "n/a",
+            "messages": [
                 {"role": "system", "content": "You are a helpful AI assistant."},
                 {"role": "user", "content": text}
             ]
-        )
-        return response.choices[0].message.content
+        }
+        
+        async with httpx.AsyncClient(timeout=30.0) as client:
+            logging.info("Making async request to Deepseek")
+            response = await client.post(
+                f"{agent_endpoint}/v1/chat/completions",
+                headers=headers,
+                json=payload
+            )
+            
+        if response.status_code == 200:
+            result = response.json()
+            logging.info("Deepseek response received successfully")
+            return result['choices'][0]['message']['content']
+        else:
+            logging.error(f"Deepseek API error: {response.text}")
+            return None
     except Exception as e:
-        logging.error(f"Deepseek API error: {str(e)}")
+        logging.error(f"Deepseek API exception: {str(e)}")
         return None
 
 @app.on_event("startup")
@@ -157,15 +186,15 @@ async def chat(request: ChatRequest):
         if not request.text:
             raise HTTPException(status_code=400, detail="No text provided")
 
-        # First try OpenAI
+        # First try OpenAI - now properly awaited
         logging.info("Attempting to get response from OpenAI")
-        response = get_openai_response(request.text)
+        response = await get_openai_response(request.text)
         source = "openai"
         
-        # If OpenAI fails, fall back to Deepseek
+        # If OpenAI fails, fall back to Deepseek - now properly awaited
         if response is None:
             logging.info("OpenAI failed, falling back to Deepseek")
-            response = get_deepseek_response(request.text)
+            response = await get_deepseek_response(request.text)
             source = "deepseek"
         
         if response is None:
