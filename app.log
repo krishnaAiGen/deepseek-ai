@@ -86,3 +86,121 @@
 2025-04-12 00:54:19,535 - INFO - OpenAI response received successfully
 2025-04-12 00:54:35,695 - INFO - Server shutdown complete
 2025-04-12 00:54:35,696 - INFO - Shutdown signal received
+2025-05-16 03:34:14,267 - INFO - Checking environment variables...
+2025-05-16 03:34:14,267 - INFO - AGENT_ENDPOINT: Set
+2025-05-16 03:34:14,267 - INFO - AGENT_KEY: Set
+2025-05-16 03:34:14,267 - INFO - OPENAI_API_KEY: Set
+2025-05-16 03:34:14,285 - INFO - Starting server...
+2025-05-16 03:35:15,824 - INFO - Received request with text: Hello, plan me a travel to kathmandu?
+2025-05-16 03:35:15,826 - INFO - Attempting to get response from OpenAI
+2025-05-16 03:35:15,826 - INFO - OpenAI API key length: 51
+2025-05-16 03:35:15,858 - INFO - Making async request to OpenAI
+2025-05-16 03:35:16,309 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-05-16 03:35:16,311 - ERROR - OpenAI API error: {
+    "error": {
+        "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.",
+        "type": "insufficient_quota",
+        "param": null,
+        "code": "insufficient_quota"
+    }
+}
+
+2025-05-16 03:35:16,311 - INFO - OpenAI failed, falling back to Deepseek
+2025-05-16 03:35:16,343 - INFO - Making async request to Deepseek
+2025-05-16 03:35:17,204 - INFO - HTTP Request: POST https://agent-ad3e87abd9b656b99c31-ocwsq.ondigitalocean.app/api/v1//v1/chat/completions "HTTP/1.1 404 Not Found"
+2025-05-16 03:35:17,205 - ERROR - Deepseek API error: {"detail":"Not Found"}
+2025-05-16 03:35:17,206 - ERROR - Both OpenAI and Deepseek failed to provide a response
+2025-05-16 03:35:17,206 - ERROR - Error in chat endpoint: 500: Failed to get response from both APIs
+2025-05-16 03:35:37,585 - INFO - Server shutdown complete
+2025-05-16 03:35:37,586 - INFO - Shutdown signal received
+2025-05-16 03:36:11,146 - INFO - Checking environment variables...
+2025-05-16 03:36:11,147 - INFO - AGENT_ENDPOINT: Set
+2025-05-16 03:36:11,147 - INFO - AGENT_KEY: Set
+2025-05-16 03:36:11,147 - INFO - OPENAI_API_KEY: Set
+2025-05-16 03:36:11,165 - INFO - Starting server...
+2025-05-16 03:36:13,559 - INFO - Received request with text: Hello, plan me a travel to kathmandu?
+2025-05-16 03:36:13,559 - INFO - Attempting to get response from OpenAI
+2025-05-16 03:36:13,559 - INFO - OpenAI API key length: 51
+2025-05-16 03:36:13,592 - INFO - Making async request to OpenAI
+2025-05-16 03:36:14,041 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-05-16 03:36:14,046 - ERROR - OpenAI API error: {
+    "error": {
+        "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.",
+        "type": "insufficient_quota",
+        "param": null,
+        "code": "insufficient_quota"
+    }
+}
+
+2025-05-16 03:36:14,046 - INFO - OpenAI failed, falling back to Deepseek
+2025-05-16 03:36:14,046 - INFO - Making request to Deepseek API: https://agent-ad3e87abd9b656b99c31-ocwsq.ondigitalocean.app/api/v1/chat/completions
+2025-05-16 03:36:14,090 - INFO - Making async request to Deepseek
+2025-05-16 03:36:44,403 - ERROR - Deepseek API exception: 
+2025-05-16 03:36:44,566 - ERROR - Both OpenAI and Deepseek failed to provide a response
+2025-05-16 03:36:44,569 - ERROR - Error in chat endpoint: 500: Failed to get response from both APIs
+2025-05-16 03:36:56,928 - INFO - Server shutdown complete
+2025-05-16 03:36:56,929 - INFO - Shutdown signal received
+2025-05-16 03:37:50,427 - INFO - Checking environment variables...
+2025-05-16 03:37:50,427 - INFO - AGENT_ENDPOINT: Set
+2025-05-16 03:37:50,427 - INFO - AGENT_KEY: Set
+2025-05-16 03:37:50,427 - INFO - OPENAI_API_KEY: Set
+2025-05-16 03:37:50,448 - INFO - Starting server...
+2025-05-16 03:37:52,879 - INFO - Received request with text: Hello, plan me a travel to kathmandu?
+2025-05-16 03:37:52,880 - INFO - Attempting to get response from Deepseek
+2025-05-16 03:37:52,880 - INFO - Making request to Deepseek API: https://agent-ad3e87abd9b656b99c31-ocwsq.ondigitalocean.app/api/v1
+2025-05-16 03:37:52,956 - INFO - Making async request to Deepseek
+2025-05-16 03:37:53,772 - INFO - HTTP Request: POST https://agent-ad3e87abd9b656b99c31-ocwsq.ondigitalocean.app/api/v1 "HTTP/1.1 404 Not Found"
+2025-05-16 03:37:53,773 - ERROR - Deepseek API error: Status 404, Response: {"detail":"Not Found"}
+2025-05-16 03:37:53,773 - INFO - Deepseek failed, falling back to OpenAI
+2025-05-16 03:37:53,773 - INFO - OpenAI API key length: 51
+2025-05-16 03:37:53,791 - INFO - Making async request to OpenAI
+2025-05-16 03:37:54,188 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-05-16 03:37:54,189 - ERROR - OpenAI API error: {
+    "error": {
+        "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.",
+        "type": "insufficient_quota",
+        "param": null,
+        "code": "insufficient_quota"
+    }
+}
+
+2025-05-16 03:37:54,190 - ERROR - Both Deepseek and OpenAI failed to provide a response
+2025-05-16 03:37:54,190 - ERROR - Error in chat endpoint: 500: Failed to get response from both APIs
+2025-05-16 03:38:12,912 - INFO - Server shutdown complete
+2025-05-16 03:38:12,914 - INFO - Shutdown signal received
+2025-05-16 03:49:11,533 - INFO - Checking environment variables...
+2025-05-16 03:49:11,534 - INFO - AGENT_ENDPOINT: Set
+2025-05-16 03:49:11,534 - INFO - AGENT_KEY: Set
+2025-05-16 03:49:11,534 - INFO - OPENAI_API_KEY: Set
+2025-05-16 03:49:11,547 - INFO - Starting server...
+2025-05-16 03:49:18,650 - INFO - Received request with text: Hello, plan me a travel to kathmandu?
+2025-05-16 03:49:18,651 - INFO - Attempting to get response from OpenAI
+2025-05-16 03:49:18,651 - INFO - OpenAI API key length: 51
+2025-05-16 03:49:18,693 - INFO - OpenAI client created successfully
+2025-05-16 03:49:18,842 - ERROR - OpenAI API error: 'Completions' object has no attribute 'acreate'
+2025-05-16 03:49:18,842 - INFO - OpenAI failed, falling back to Deepseek
+2025-05-16 03:49:18,855 - ERROR - Deepseek API error: 'Completions' object has no attribute 'acreate'
+2025-05-16 03:49:18,855 - ERROR - Both OpenAI and Deepseek failed to provide a response
+2025-05-16 03:49:18,855 - ERROR - Error in chat endpoint: 500: Failed to get response from both APIs
+2025-05-16 03:49:44,520 - INFO - Server shutdown complete
+2025-05-16 03:49:44,529 - INFO - Shutdown signal received
+2025-05-16 03:49:44,537 - INFO - Shutdown signal received
+2025-05-16 03:50:31,852 - INFO - Checking environment variables...
+2025-05-16 03:50:31,852 - INFO - AGENT_ENDPOINT: Set
+2025-05-16 03:50:31,852 - INFO - AGENT_KEY: Set
+2025-05-16 03:50:31,852 - INFO - OPENAI_API_KEY: Set
+2025-05-16 03:50:31,866 - INFO - Starting server...
+2025-05-16 03:50:35,031 - INFO - Received request with text: Hello, plan me a travel to kathmandu?
+2025-05-16 03:50:35,032 - INFO - Attempting to get response from OpenAI
+2025-05-16 03:50:35,032 - INFO - OpenAI API key length: 51
+2025-05-16 03:50:35,064 - INFO - OpenAI client created successfully
+2025-05-16 03:50:35,644 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-05-16 03:50:35,645 - INFO - Retrying request to /chat/completions in 0.380270 seconds
+2025-05-16 03:50:36,354 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-05-16 03:50:36,395 - INFO - Retrying request to /chat/completions in 0.820411 seconds
+2025-05-16 03:50:37,545 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-05-16 03:50:37,547 - ERROR - OpenAI API error: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2025-05-16 03:50:37,547 - INFO - OpenAI failed, falling back to Deepseek
+2025-05-16 03:51:34,283 - INFO - HTTP Request: POST https://agent-ad3e87abd9b656b99c31-ocwsq.ondigitalocean.app/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-16 03:51:41,142 - INFO - Server shutdown complete
+2025-05-16 03:51:41,145 - INFO - Shutdown signal received
